@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Young+Serif&display=swap');
+
+/* Aquí se definen colores, sombras y tipografías reutilizables */
+:root {
+  --color-background: #f3e5d8; /* fondo de la página */
+  --color-card: #fffaf7; /* fondo de la tarjeta */
+  --color-primary: #854632; /* color principal, suele usarse en títulos */
+  --color-text: #303030; /* color general del texto */
+  --color-muted: #5f5f5f; /* texto más claro */
+  --color-border: #e7d4c3; /* color de líneas divisorias */
+  --color-accent: #f4e6dc; /* color de fondo para bloques destacados */
+  --shadow: 0 18px 35px rgba(136, 90, 60, 0.12); /* sombra suave */
+}
+
+/* Reset básico para que todos los elementos empiecen sin margen ni padding extra */
+* {
+  box-sizing: border-box; /* el ancho y alto incluyen padding y borde */
+  margin: 0; /* quita margen externo */
+  padding: 0; /* quita padding interno */
+}
+
+body {
+  font-family: 'Outfit', sans-serif; /* fuente general */
+  background: var(--color-background); /* fondo beige */
+  color: var(--color-text); /* color del texto */
+  line-height: 1.6; /* altura de línea para legibilidad */
+  min-height: 100vh; /* ocupa toda la altura de la ventana */
+  display: grid; /* activa grid */
+  place-items: center; /* centra horizontal y verticalmente */
+  padding: 40px 20px; /* espacio alrededor del contenido */
+}
+
+.card-container {
+  width: 100%; /* ocupa todo el ancho disponible */
+  display: flex; /* usa flexbox */
+  justify-content: center; /* centra la tarjeta horizontalmente */
+}
+
+.card {
+  width: min(100%, 760px); /* ancho máximo de 760px, pero responsive */
+  background: var(--color-card); /* fondo de la tarjeta */
+  border-radius: 24px; /* esquinas redondeadas */
+  box-shadow: var(--shadow); /* sombra para darle profundidad */
+  padding: 30px; /* espacio interno */
+}
+
+.card img {
+  width: 100%; /* la imagen ocupa todo el ancho de la tarjeta */
+  display: block; /* elimina espacios extra bajo la imagen */
+  border-radius: 18px; /* redondea la imagen */
+  margin-bottom: 28px; /* separación debajo de la imagen */
+}
+
+h1, h2 {
+  font-family: 'Young Serif', serif; /* tipografía elegante para títulos */
+  color: var(--color-primary); /* color marrón principal */
+  font-weight: 400; /* grosor normal */
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4vw, 3rem); /* tamaño adaptable según la pantalla */
+  margin-bottom: 18px; /* separa el título del texto siguiente */
+}
+
+h2 {
+  font-size: 1.75rem; /* tamaño del subtítulo */
+  margin-bottom: 16px; /* espacio debajo del subtítulo */
+}
+
+p, li, td {
+  font-size: 1rem; /* tamaño estándar del texto */
+  color: var(--color-muted); /* texto gris medio */
+}
+
+section {
+  margin-top: 28px; /* separa cada bloque */
+  padding-top: 24px; /* espacio interno arriba */
+  border-top: 1px solid var(--color-border); /* línea divisoria */
+}
+
+.section-preparation-time {
+  background: var(--color-accent); /* fondo claro para destacar */
+  border-radius: 14px; /* esquinas redondeadas */
+  padding: 20px 24px; /* relleno interno */
+  border-top: none; /* quita la línea superior del section */
+  margin-top: 24px; /* separa del bloque anterior */
+}
+
+.section-preparation-time h2 {
+  font-size: 1.35rem; /* tamaño del subtítulo del bloque */
+  margin-bottom: 14px; /* espacio debajo del título */
+}
+
+ul, ol {
+  padding-left: 22px; /* mueve la lista hacia adentro para que se vea ordenada */
+}
+
+li {
+  margin-bottom: 10px; /* espacio entre cada item de la lista */
+  padding-left: 8px; /* espacio a la izquierda del texto */
+}
+
+.instructions li::marker {
+  color: var(--color-primary); /* cambia el color del número o viñeta */
+  font-weight: 700; /* hace que se vea más marcado */
+}
+
+.nutrition table {
+  width: 100%; /* tabla ocupa todo el ancho */
+  border-collapse: collapse; /* une bordes de la tabla */
+  margin-top: 16px; /* separación arriba */
+}
+
+.nutrition tr {
+  border-bottom: 1px solid var(--color-border); /* líneas divisorias entre filas */
+}
+
+.nutrition td,
+.nutrition th {
+  padding: 12px 0; /* espacio dentro de cada celda */
+  text-align: left; /* alinea a la izquierda */
+}
+
+.nutrition th {
+  width: 50%; /* ocupa la mitad del ancho */
+  color: var(--color-primary); /* color gris de los nombres */
+  font-weight: 700; /* peso normal */
+}
+
+.nutrition td {
+  color: var(--color-muted ); /* valor nutricional en marrón */
+  font-weight: 400; /* negrita */
+}
+
+.attribution {
+  margin-top: 22px; /* separación del contenido principal */
+  text-align: center; /* texto centrado */
+  font-size: 0.9rem; /* tamaño pequeño */
+  color: var(--color-muted); /* color gris */
+}
+
+.attribution a {
+  color: var(--color-primary); /* color de los enlaces */
+  text-decoration: none; /* quita subrayado */
+  font-weight: 600; /* hace el enlace más visible */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 540px) {
+  .card {
+    padding: 18px; /* menos espacio dentro de la tarjeta */
+    border-radius: 18px; /* esquinas un poco menos redondeadas */
+  }
+
+  h1 {
+    font-size: 2.2rem; /* tamaño del título en móvil */
+  }
+
+  h2 {
+    font-size: 1.4rem; /* tamaño de subtítulos en móvil */
+  }
+}
